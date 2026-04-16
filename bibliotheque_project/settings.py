@@ -81,10 +81,14 @@ WSGI_APPLICATION = 'bibliotheque_project.wsgi.application'
 # Configuration pour Railway (PostgreSQL en production)
 if os.environ.get('RAILWAY_ENVIRONMENT'):
     DATABASES = {
-        'default': dj_database_url.parse(
-            os.environ.get('DATABASE_URL', 'postgres://user:password@localhost:5432/dbname'),
-            conn_max_age=600
-        )
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('PGDATABASE'),
+            'USER': os.environ.get('PGUSER'),
+            'PASSWORD': os.environ.get('PGPASSWORD'),
+            'HOST': os.environ.get('PGHOST'),
+            'PORT': os.environ.get('PGPORT'),
+        }
     }
 else:
     # Configuration locale (SQLite pour développement)
