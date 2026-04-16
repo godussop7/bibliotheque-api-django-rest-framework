@@ -81,8 +81,8 @@ WSGI_APPLICATION = 'bibliotheque_project.wsgi.application'
 # Configuration pour Railway (PostgreSQL en production)
 if os.environ.get('RAILWAY_ENVIRONMENT'):
     DATABASES = {
-        'default': dj_database_url.config(
-            default='postgres://user:password@localhost:5432/dbname',
+        'default': dj_database_url.parse(
+            os.environ.get('DATABASE_URL', 'postgres://user:password@localhost:5432/dbname'),
             conn_max_age=600
         )
     }
