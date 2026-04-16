@@ -45,11 +45,6 @@ INSTALLED_APPS = [
     'rest_framework',      # Django REST Framework
     'django_filters',      # Filtres avancés
     'unfold',              # Thème admin moderne
-    'unfold.contrib.filters',
-    'unfold.contrib.forms',
-    'unfold.contrib.inlines',
-    'unfold.contrib.pagination',
-    'unfold.contrib.tabs',
     # Notre application
     'api',
 ]
