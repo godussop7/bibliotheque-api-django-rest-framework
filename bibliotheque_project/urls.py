@@ -18,8 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from jet.dashboard import dashboard
+from jet.dashboard.views import dashboard_index_view
 
 urlpatterns = [
+    path('jet/', include('jet.urls', 'jet')),  # Jet admin URLs
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Jet dashboard URLs
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
 ]
