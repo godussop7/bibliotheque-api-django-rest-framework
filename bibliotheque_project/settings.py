@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # Packages tiers
     'rest_framework',      # Django REST Framework
     'django_filters',      # Filtres avancés
+    'jazzmin',             # Thème admin moderne
     # Notre application
     'api',
 ]
@@ -144,6 +145,36 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# Jazzmin theme configuration
+JAZZMIN_SETTINGS = {
+    'title': 'Bibliothèque API',
+    'header_title': 'Bibliothèque API',
+    'copyright': 'Bibliothèque API',
+    'language_selector': True,
+    'menu': [
+        {
+            'model': 'api.Auteur',
+            'label': 'Auteurs',
+        },
+        {
+            'model': 'api.Livre',
+            'label': 'Livres',
+        },
+        {
+            'model': 'api.Tag',
+            'label': 'Tags',
+        },
+        {
+            'model': 'api.ProfilLecteur',
+            'label': 'Lecteurs',
+        },
+        {
+            'model': 'api.Emprunt',
+            'label': 'Emprunts',
+        },
+    ],
+}
 
 # Configuration REST Framework
 REST_FRAMEWORK = {
