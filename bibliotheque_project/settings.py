@@ -79,7 +79,8 @@ WSGI_APPLICATION = 'bibliotheque_project.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 # Configuration pour Railway (PostgreSQL en production)
-if os.environ.get('RAILWAY_ENVIRONMENT'):
+# Utiliser PostgreSQL seulement si toutes les variables sont disponibles
+if all(os.environ.get(key) for key in ['PGDATABASE', 'PGUSER', 'PGPASSWORD', 'PGHOST', 'PGPORT']):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -91,7 +92,7 @@ if os.environ.get('RAILWAY_ENVIRONMENT'):
         }
     }
 else:
-    # Configuration locale (SQLite pour développement)
+    # Configuration locale/Build (SQLite pour développement et build)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
