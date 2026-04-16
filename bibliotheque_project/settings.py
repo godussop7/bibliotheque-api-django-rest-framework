@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     # Packages tiers
     'rest_framework',      # Django REST Framework
     'django_filters',      # Filtres avancés
-    'jet',                 # Thème admin moderne
     # Notre application
     'api',
 ]
