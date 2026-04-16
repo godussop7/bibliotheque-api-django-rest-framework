@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     # Packages tiers
     'rest_framework',      # Django REST Framework
     'django_filters',      # Filtres avancés
-    'unfold',              # Thème admin moderne
     # Notre application
     'api',
 ]
@@ -145,40 +144,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
-# Unfold theme configuration
-UNFOLD = {
-    'title': 'Bibliothèque API',
-    'sidebar': {
-        'navigation': [
-            {
-                'title': 'Bibliothèque',
-                'items': [
-                    {
-                        'title': 'Auteurs',
-                        'model': 'api.Auteur',
-                    },
-                    {
-                        'title': 'Livres',
-                        'model': 'api.Livre',
-                    },
-                    {
-                        'title': 'Tags',
-                        'model': 'api.Tag',
-                    },
-                    {
-                        'title': 'Lecteurs',
-                        'model': 'api.ProfilLecteur',
-                    },
-                    {
-                        'title': 'Emprunts',
-                        'model': 'api.Emprunt',
-                    },
-                ]
-            }
-        ]
-    }
-}
 
 # Configuration REST Framework
 REST_FRAMEWORK = {
