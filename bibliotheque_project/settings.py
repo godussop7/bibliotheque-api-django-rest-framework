@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'rest_framework',      # Django REST Framework
     'django_filters',      # Filtres avancés
     'jet',                 # Thème admin moderne
-    'jet.reorder',         # Réordonnement des apps
     # Notre application
     'api',
 ]
