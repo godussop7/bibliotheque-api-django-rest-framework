@@ -1,4 +1,4 @@
-N = int(input("Entrez un nombre : "))
-print("Vous avez entré : ",N)
-for i in range(1, N + 1):
-    print(i)
+somme = 0
+for i in range(1, 10):
+    somme += i
+print(somme)
