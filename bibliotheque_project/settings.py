@@ -35,7 +35,7 @@ CSRF_TRUSTED_ORIGINS = ['https://web-production-f8b47.up.railway.app', 'http://w
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',             # Thème admin moderne - DOIT être avant django.contrib.admin
+    'grappelli',           # Thème admin Grappelli
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -145,15 +145,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
-# Configuration Jazzmin - Thème admin moderne
-JAZZMIN_SETTINGS = {
-    'title': 'Bibliothèque API',
-    'header_title': 'Bibliothèque API',
-    'copyright': 'Bibliothèque API © 2024',
-    'welcome_sign': True,
-    'language_selector': True,
-}
 
 # Configuration REST Framework
 REST_FRAMEWORK = {
