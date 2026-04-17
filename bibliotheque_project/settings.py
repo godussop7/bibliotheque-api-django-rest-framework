@@ -148,102 +148,11 @@ STATICFILES_DIRS = [
 
 # Configuration Jazzmin - Thème admin moderne
 JAZZMIN_SETTINGS = {
-    # Titre et branding
     'title': 'Bibliothèque API',
     'header_title': 'Bibliothèque API',
     'copyright': 'Bibliothèque API © 2024',
-    'logo': 'fa-book',
-    'logo_name': True,
     'welcome_sign': True,
-    
-    # Thème
-    'theme': 'dark',
-    'css': {
-        'font_family': 'Roboto, sans-serif',
-        'header_background': '#1a1a2e',
-        'sidebar_background': '#16213e',
-        'accent': '#e94560',
-    },
-    
-    # Navigation
-    'navigation': {
-        'custom_links': [
-            {
-                'name': 'API Documentation',
-                'url': '/api/',
-                'icon': 'fa-code',
-                'new_window': False,
-            },
-        ],
-    },
-    
-    # Menu personnalisé
-    'menu': [
-        {
-            'label': 'Gestion des Livres',
-            'items': [
-                {
-                    'model': 'api.Livre',
-                    'label': 'Livres',
-                    'icon': 'fa-book',
-                },
-                {
-                    'model': 'api.Auteur',
-                    'label': 'Auteurs',
-                    'icon': 'fa-user-edit',
-                },
-                {
-                    'model': 'api.Tag',
-                    'label': 'Tags',
-                    'icon': 'fa-tags',
-                },
-            ],
-        },
-        {
-            'label': 'Gestion des Emprunts',
-            'items': [
-                {
-                    'model': 'api.Emprunt',
-                    'label': 'Emprunts',
-                    'icon': 'fa-hand-holding',
-                },
-                {
-                    'model': 'api.ProfilLecteur',
-                    'label': 'Lecteurs',
-                    'icon': 'fa-users',
-                },
-            ],
-        },
-        {
-            'label': 'Administration',
-            'items': [
-                {
-                    'app': 'auth',
-                    'label': 'Utilisateurs',
-                    'icon': 'fa-user-shield',
-                },
-            ],
-        },
-    ],
-    
-    # Options avancées
     'language_selector': True,
-    'hide_model_audit_log': True,
-    'show_ui_builder': False,
-    'action_menu': [
-        'add',
-        'export',
-        'delete',
-    ],
-    
-    # Dashboard
-    'dashboard': {
-        'welcome_sign': True,
-        'recent_actions': {
-            'enabled': True,
-            'limit': 5,
-        },
-    },
 }
 
 # Configuration REST Framework
