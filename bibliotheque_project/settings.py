@@ -35,6 +35,7 @@ CSRF_TRUSTED_ORIGINS = ['https://web-production-f8b47.up.railway.app', 'http://w
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',             # Thème admin moderne - DOIT être avant django.contrib.admin
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +45,6 @@ INSTALLED_APPS = [
     # Packages tiers
     'rest_framework',      # Django REST Framework
     'django_filters',      # Filtres avancés
-    'jazzmin',             # Thème admin moderne
     # Notre application
     'api',
 ]
