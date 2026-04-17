@@ -34,16 +34,16 @@ class LivreAdmin(admin.ModelAdmin):
 @admin.register(ProfilLecteur)
 class ProfilLecteurAdmin(admin.ModelAdmin):
     list_display = ('utilisateur', 'date_adhesion', 'livres_empruntes_max', 'telephone')
-    list_filter = ('date_adhesion',)
     search_fields = ('utilisateur__username', 'utilisateur__email')
+    list_filter = ('date_adhesion',)
     readonly_fields = ('date_adhesion',)
 
 
 @admin.register(Emprunt)
 class EmpruntAdmin(admin.ModelAdmin):
     list_display = ('livre', 'lecteur', 'date_emprunt', 'date_retour_prevue', 'rendu')
-    list_filter = ('rendu', 'date_emprunt', 'date_retour_prevue')
     search_fields = ('livre__titre', 'lecteur__utilisateur__username')
+    list_filter = ('rendu', 'date_emprunt', 'date_retour_prevue')
     readonly_fields = ('date_emprunt',)
     ordering = ('-date_emprunt',)
 
