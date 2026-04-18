@@ -65,7 +65,7 @@ ROOT_URLCONF = 'bibliotheque_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -145,6 +145,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# Configuration Grappelli
+GRAPPELLI_ADMIN_TITLE = 'Bibliothèque API'
+GRAPPELLI_INDEX_DASHBOARD = 'bibliotheque_project.dashboard.CustomDashboard'
+GRAPPELLI_SWITCH_USER = True
+GRAPPELLI_AUTOCOMPLETES_AS_TAGS = True
 
 # Configuration REST Framework
 REST_FRAMEWORK = {
